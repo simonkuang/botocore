@@ -373,7 +373,7 @@ class ClientEndpointBridge(object):
                      service_name, region_name, endpoint_url)
         # We still want to allow the user to provide an explicit version.
         signature_version = self._resolve_signature_version(
-            service_name, {'signatureVersions': ['v4']})
+            service_name, {'signatureVersions': ['v2', 'v4']})
         signing_name = self._resolve_signing_name(service_name, resolved={})
         return self._create_result(
             service_name=service_name, region_name=region_name,
